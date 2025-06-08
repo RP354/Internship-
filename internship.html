@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Python Internship Program</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+  /* Color Palette */
+  :root {
+    --trust-blue: #007BFF;
+    --learning-green: #28A745;
+    --soft-light-gray: #F8F9FA;
+    --charcoal-black: #212529;
+    --warm-yellow: #FFC107;
+    --alert-red: #DC3545;
+  }
+
+  /* Global Styles */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--soft-light-gray);
+    color: var(--charcoal-black);
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--trust-blue);
+  }
+
+  /* Header */
+  header {
+    background-color: var(--trust-blue);
+    color: white;
+    padding: 1.25rem 2rem;
+    font-weight: 700;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 2rem auto 4rem auto;
+    padding: 0 1rem;
+  }
+
+  /* Section Background */
+  section {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.07);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Card Elements styling can be used for sections as well */
+
+  /* Headings */
+  h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0.625rem;
+    color: var(--charcoal-black);
+  }
+
+  h1 {
+    font-weight: 700; /* Poppins Bold */
+    font-size: 24px;
+  }
+
+  h2 {
+    font-weight: 600; /* Poppins SemiBold or Medium */
+    font-size: 18px;
+    color: var(--trust-blue);
+  }
+
+  h3 {
+    font-weight: 500; /* Poppins Medium */
+    font-size: 18px;
+  }
+
+  /* Paragraph */
+  p {
+    font-weight: 400; /* Poppins Regular */
+    font-size: 16px;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    color: var(--charcoal-black);
+  }
+
+  /* Lists */
+  ul {
+    padding-left: 1.2rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Highlights & offers */
+  .highlight {
+    background-color: var(--warm-yellow);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--charcoal-black);
+  }
+
+  /* Success indication */
+  .success-list li::before {
+    content: "✅";
+    margin-right: 0.5rem;
+    color: var(--learning-green);
+  }
+
+  /* Error/Warning style (not used explicitly here – kept for reference) */
+  .alert {
+    color: var(--alert-red);
+    font-weight: 600;
+  }
+
+  /* CTA Button */
+  .btn-enroll {
+    background-color: var(--trust-blue);
+    color: white;
+    font-weight: 600; /* Poppins SemiBold */
+    font-size: 16px;
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+  }
+
+  .btn-enroll:hover,
+  .btn-enroll:focus {
+    background-color: #0056b3;
+    outline: none;
+  }
+
+  /* Section Titles */
+  .section-title {
+    border-bottom: 3px solid var(--learning-green);
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Flex & Layout */
+  .program-structure ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .program-structure li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .program-structure li::before {
+    content: "•";
+    color: var(--trust-blue);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    line-height: 1;
+    top: 0.15rem;
+  }
+
+  /* Input fields (if any needed) */
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    outline-offset: 2px;
+    outline-color: transparent;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    border-color: var(--trust-blue);
+    outline-color: var(--trust-blue);
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header {
+      font-size: 20px;
+      padding: 1rem 1.5rem;
+    }
+
+    .container {
+      margin: 1rem auto 2.5rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      padding: 1.5rem 1.5rem;
+      border-radius: 10px;
+    }
+
+    .btn-enroll {
+      width: 100%;
+      padding: 0.85rem 0;
+      font-size: 18px;
+      border-radius: 28px;
+      box-shadow: 0 3px 8px rgba(0,123,255,0.5);
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  Python Internship Brand Guide
+</header>
+
+<main class="container" role="main" aria-label="Python Internship Program Details">
+
+  <section aria-labelledby="program-title">
+    <h1 id="program-title">🚀 2-Month Python Internship Program</h1>
+    <p><strong>Learn. Build. Get Certified.</strong></p>
+    <p>Whether you’re a student or a beginner in programming, this internship is designed to give you both strong foundational skills in Python and real-world project experience.</p>
+  </section>
+
+  <section class="program-structure" aria-labelledby="structure-title">
+    <h2 id="structure-title" class="section-title">🗓️ Program Structure</h2>
+
+    <h3>Month 1: Python Basics – Self-Paced Learning</h3>
+    <ul>
+      <li>Core concepts: Variables, Data Types, Loops, Functions, OOP</li>
+      <li>Interactive exercises and quizzes</li>
+      <li>Learn at your own pace, anytime</li>
+    </ul>
+
+    <h3>Month 2: Project Implementation – Hands-On Practice</h3>
+    <ul>
+      <li>Build real-world Python projects</li>
+      <li>Weekly mentor support and reviews</li>
+      <li>Project Lab access for continued learning</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="offer-title">
+    <h2 id="offer-title" class="section-title">🎁 Offer Details</h2>
+    <p><strong>Original Price:</strong> ₹10,000</p>
+    <p><strong>Limited Time Offer:</strong> <span class="highlight">₹4,999 (50% OFF!)</span></p>
+
+    <ul class="success-list" aria-label="Offer benefits">
+      <li>Internship Completion Certificate</li>
+      <li>Real-World Project Work</li>
+      <li>Access to Python Project Lab</li>
+      <li>Mentorship & Career Support</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="audience-title">
+    <h2 id="audience-title" class="section-title">👨‍🎓 Who Should Join?</h2>
+    <ul>
+      <li>Students looking for internship credits</li>
+      <li>Beginners wanting structured Python learning</li>
+      <li>Anyone aiming to start a career in tech with practical skills</li>
+    </ul>
+  </section>
+
+  <section class="cta" aria-label="Call to Action">
+    <h2 class="section-title" style="color: var(--trust-blue);">✅ Get Started Now!</h2>
+    <p>👉 Click the button below to enroll and reserve your seat.</p>
+    <button class="btn-enroll" type="button" aria-label="Enroll Now for 4999 Rupees">
+      🚀 Enroll Now for ₹4,999
+    </button>
+    <p style="margin-top: 0.8rem; font-weight: 600; color: var(--alert-red);">Limited seats. Early bird discount ends soon!</p>
+  </section>
+
+</main>
+</body>
+</html>
